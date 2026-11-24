@@ -1,4 +1,5 @@
 from code1 import total
+import pytest
 
 
 def test_total():
@@ -18,3 +19,9 @@ def test_total():
 
     """La somme d'une liste vide doit être 0"""
     assert total([]) == 0
+
+
+def test_total_raises_exception_on_non_list_arguments():
+    with pytest.raises(TypeError):
+        total(0)
+
